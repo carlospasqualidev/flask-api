@@ -1,0 +1,38 @@
+// database
+
+// IF YOU MAKE CHANGES, RUN THIS COMMAND TO CREATE A NEW CLIENT WITH MODELS
+//prisma db push
+
+datasource db {
+    provider = "mongodb"
+    url      = "mongodb+srv://admin:LRwbPzcOzpzZYJXn@adalogs.97ad1bh.mongodb.net/ml-db?retryWrites=true&w=majority"
+}
+
+generator client {
+    provider             = "prisma-client-py"
+    interface            = "asyncio"
+    recursive_type_depth = 5
+}
+
+model users {
+    id String @id @default(auto()) @map("_id") @db.ObjectId
+
+    email     String  @unique
+    isBlocked Boolean @default(false)
+    password  String
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    accesses userAccesses[]
+}
+
+model userAccesses {
+    id          String   @id @default(auto()) @map("_id") @db.ObjectId
+    usersId     String?  @db.ObjectId
+    environment String
+    createdAt   DateTime @default(now())
+    updatedAt   DateTime @updatedAt
+
+    users users? @relation(fields: [usersId], references: [id])
+}
