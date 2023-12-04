@@ -10,10 +10,7 @@ async def checkEmailAlredyUsedService(email):
     where={
         'email': email,
     })
-
-    if (user):
-        raise ValueError("Email já cadastrado")
-
+        
     await db.disconnect()
 
     return user

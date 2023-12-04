@@ -13,4 +13,5 @@ if __name__ == '__main__':
 
 #RUN THIS PROJECT
 
+# .venv\Scripts\activate
 # flask --app server --debug run 
