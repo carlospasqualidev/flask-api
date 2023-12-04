@@ -7,8 +7,6 @@ from src.api.services.user.createUserService import createUserService
 
 async def createUserController(email,password):
     
-
-    
     user = await checkEmailAlredyUsedService(email)
 
     if (user):

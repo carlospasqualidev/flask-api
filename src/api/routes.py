@@ -1,5 +1,6 @@
 
 from flask import Blueprint, jsonify,request
+from src.api.services.user.findUserByIdService import findUserByIdService
 
 from src.api.controllers.music.findManyMusicsController import findManyMusicsController
 from src.api.controllers.auth.loginController import loginController
@@ -15,6 +16,38 @@ routerBlueprint = Blueprint('api', __name__)
 @routerBlueprint.route("/predicts", methods=["POST"])
 async def predict():
     data = request.get_json()
+
+    #region VALIDATE FIELDS
+    if(data["dance"] == ''):
+         addError("Campo dance é obrigatório.")
+    if(data["energy"] == ''):
+        addError("Campo energy é obrigatório.")
+    if(data["key"] == ''):
+        addError("Campo key é obrigatório.")
+    if(data["speech"] == ''):
+        addError("Campo speech é obrigatório.")
+    if(data["acoustic"] == ''):
+        addError("Campo acoustic é obrigatório.")
+    if(data["instrumental"] == ''):
+        addError("Campo instrumental é obrigatório.")
+    if(data["time"] == ''):
+        addError("Campo time é obrigatório.")
+    if(data["name"] == ''):
+        addError("Campo name é obrigatório.")
+    if(data["userId"] == ''):
+        addError("Campo userId é obrigatório.")
+    
+    user = await findUserByIdService(data["userId"])
+    if (user is None):
+        return addError("Usuário não encontrado na base de dados.") 
+
+    #region HANDLE ERRORS  
+    errors = getErrors()
+    if(errors):
+        return jsonify({"message": errors,} ),422
+    #endregion
+
+    #endregion
 
     music = await predictMusicPopularityController(data["dance"],
                                            data["energy"],
@@ -85,7 +118,6 @@ async def delete(id):
     #endregion
 
     return jsonify({"message":["Usuario excluído com sucesso."]} ),200
-
 
 # endregion
 
