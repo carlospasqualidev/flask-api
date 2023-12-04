@@ -1,12 +1,11 @@
 from prisma import Prisma
 
-
 async def updateUserService(id,email, password):
     db = Prisma()
     await db.connect()
 
     user = await  db.users.update(
-      data={  
+        data={  
             "email": email,
             "password": password,
         },

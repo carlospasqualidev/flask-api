@@ -1,16 +1,16 @@
 from prisma import Prisma
 
-async def findUserByIdService(id):
+async def findManyMusicsService(id):
     db = Prisma()
     await db.connect()
 
-    user = await db.users.find_first(
+    musics = await db.musics.find_many(
         where={
-            'id': id,
+            'userId': id,
         }
     )
 
     await db.disconnect()
 
-    return user
+    return musics
   

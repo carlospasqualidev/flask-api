@@ -1,8 +1,5 @@
-
-
 from src.api.services.error.handleError import addError
 from src.api.services.user.findUserByEmailService import findUserByEmailService
-
 
 async def loginController(email,password):
     

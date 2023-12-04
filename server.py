@@ -10,7 +10,6 @@ app.register_blueprint(routerBlueprint, url_prefix='/api')
 if __name__ == '__main__':
     app.run(debug=True)
 
-
 #RUN THIS PROJECT
 
 # .venv\Scripts\activate

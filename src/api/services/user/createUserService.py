@@ -1,6 +1,5 @@
 from prisma import Prisma
 
-
 async def createUserService(email, password):
     db = Prisma()
     await db.connect()

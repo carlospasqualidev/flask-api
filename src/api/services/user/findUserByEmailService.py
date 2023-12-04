@@ -5,9 +5,10 @@ async def findUserByEmailService(email):
     await db.connect()
 
     user = await db.users.find_first(
-    where={
-        'email': email,
-    })
+        where={
+            'email': email,
+        }
+    )
 
     await db.disconnect()
 

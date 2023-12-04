@@ -24,15 +24,24 @@ model users {
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 
-    accesses userAccesses[]
+    musics musics[]
 }
 
-model userAccesses {
-    id          String   @id @default(auto()) @map("_id") @db.ObjectId
-    usersId     String?  @db.ObjectId
-    environment String
-    createdAt   DateTime @default(now())
-    updatedAt   DateTime @updatedAt
+model musics {
+    id           String  @id @default(auto()) @map("_id") @db.ObjectId
+    userId       String? @db.ObjectId
+    name         String
+    dance        Float
+    energy       Float
+    key          Int
+    speech       Float
+    acoustic     Float
+    instrumental Float
+    time         Float
+    popularity   Float
 
-    users users? @relation(fields: [usersId], references: [id])
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    users users? @relation(fields: [userId], references: [id])
 }
