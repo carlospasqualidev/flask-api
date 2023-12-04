@@ -15,6 +15,7 @@ async def loginController(email,password):
        return addError('Usuário ou senha incorretos')
     
     return {
+        "id": user.id,
         "email": user.email,
     }
     

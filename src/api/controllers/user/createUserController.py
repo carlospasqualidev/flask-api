@@ -16,6 +16,6 @@ async def createUserController(email,password):
 
     return {
         "email": user.email,
-        "password": user.password
+        "id": user.id,
     }
     
