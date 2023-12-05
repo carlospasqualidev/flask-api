@@ -1,0 +1,5 @@
+flasky #pip install flask
+prisma #pip install prisma
+keras #pip install keras
+tensorflow #pip install tensorflow
+'flask[async]' #pip install 'flask[async]'
