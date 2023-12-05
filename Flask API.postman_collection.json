@@ -1,0 +1,724 @@
+{
+	"info": {
+		"_postman_id": "1cfa32ac-0ed7-4eac-b1f1-f77a3ca775fd",
+		"name": "Flask API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19858191"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"teste@gmail.com\",\r\n    \"password\":\"123123123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiURL}}/users",
+							"host": [
+								"{{apiURL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"daniel@gmail.com\",\r\n    \"password\":\"123123123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiURL}}/users",
+									"host": [
+										"{{apiURL}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "CREATED",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.11.6"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 Dec 2023 14:42:30 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "148"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": [\n        \"Usuario cadastrado com sucesso.\"\n    ],\n    \"user\": {\n        \"email\": \"daniel@gmail.com\",\n        \"id\": \"656de556aaacedf8f98f88c5\"\n    }\n}"
+						},
+						{
+							"name": "422",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"carlos@gmail.com\",\r\n    \"password\":\"123123123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiURL}}/users",
+									"host": [
+										"{{apiURL}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "UNPROCESSABLE ENTITY",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.11.6"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 Dec 2023 14:39:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "54"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": [\n        \"Email já cadastrado\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"656e6d9b8edd08f1cd719d46\",\r\n    \"email\":\"daniel@gmail.com\",\r\n    \"password\":\"123123123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiURL}}/users",
+							"host": [
+								"{{apiURL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"656de4ad451aec234358573f\",\r\n    \"email\": \"carlos@gmail.com\",\r\n    \"password\": \"123123123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiURL}}/users",
+									"host": [
+										"{{apiURL}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.11.6"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 Dec 2023 14:41:57 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "110"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": [\n        \"Usuario atualizado com sucesso.\"\n    ],\n    \"user\": {\n        \"email\": \"carlos@gmail.com\"\n    }\n}"
+						},
+						{
+							"name": "404",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"656de4ad451aec234358573f\",\r\n    \"email\":\"carlos@gmail.com\",\r\n    \"password\":\"123123123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiURL}}/users",
+									"host": [
+										"{{apiURL}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "UNPROCESSABLE ENTITY",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.11.6"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 Dec 2023 14:37:58 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "80"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": [\n        \"Usuário não encontrado na base de dados.\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiURL}}/users/:id",
+							"host": [
+								"{{apiURL}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "656e6d9b8edd08f1cd719d46"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{apiURL}}/users/:id",
+									"host": [
+										"{{apiURL}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "656ddfcb679575e509de2270"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.11.6"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 Dec 2023 14:35:58 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": [\n        \"Usuario excluído com sucesso.\"\n    ]\n}"
+						},
+						{
+							"name": "404",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{apiURL}}/users/:id",
+									"host": [
+										"{{apiURL}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "656ce4ac1d457bbf0cfd527f"
+										}
+									]
+								}
+							},
+							"status": "NOT FOUND",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.11.6"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 Dec 2023 14:35:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "80"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": [\n        \"Usuário não encontrado na base de dados.\"\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"carlos@gmail.com\",\r\n    \"password\":\"123123123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiURL}}/login",
+							"host": [
+								"{{apiURL}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"carlos@gmail.com\",\r\n    \"password\":\"123123123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiURL}}/login",
+									"host": [
+										"{{apiURL}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.11.6"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 Dec 2023 14:40:37 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "90"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"email\": \"carlos@gmail.com\",\n        \"id\": \"656de4ad451aec234358573f\"\n    }\n}"
+						},
+						{
+							"name": "404",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"carlos@gmail.com\",\r\n    \"password\":\"123123123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiURL}}/login",
+									"host": [
+										"{{apiURL}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "NOT FOUND",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.11.6"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 Dec 2023 14:40:18 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "62"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": [\n        \"Usuário ou senha incorretos\"\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "machine learning",
+			"item": [
+				{
+					"name": "predict",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"656de556aaacedf8f98f88c5\",\r\n    \"name\": \"Back In Black\",\r\n    \"dance\": 0.73855544,\r\n    \"energy\":  0.81496762,\r\n    \"key\": 1,\r\n    \"speech\": 0.04063181,\r\n    \"acoustic\": 0.07283702,\r\n    \"instrumental\": 0.00423541,\r\n    \"time\": 0.41752422\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiURL}}/predicts",
+							"host": [
+								"{{apiURL}}"
+							],
+							"path": [
+								"predicts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\":\"656de556aaacedf8f98f88c5\",\r\n    \"name\": \"Highway to Hell\",\r\n    \"dance\": 0.73855544,\r\n    \"energy\":  0.81496762,\r\n    \"key\": 1,\r\n    \"speech\": 0.04063181,\r\n    \"acoustic\": 0.07283702,\r\n    \"instrumental\": 0.00423541,\r\n    \"time\": 0.41752422\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiURL}}/predicts",
+									"host": [
+										"{{apiURL}}"
+									],
+									"path": [
+										"predicts"
+									]
+								}
+							},
+							"status": "CREATED",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.11.6"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 Dec 2023 20:01:42 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "423"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": [\n        \"Modelo de predição executado com sucesso.\"\n    ],\n    \"music\": {\n        \"acoustic\": 0.07283702,\n        \"dance\": 0.73855544,\n        \"energy\": 0.81496762,\n        \"id\": \"656e302622386fad3fb84345\",\n        \"instrumental\": 0.00423541,\n        \"key\": 1,\n        \"name\": \"Highway to Hell\",\n        \"popularity\": 42.55748748779297,\n        \"speech\": 0.04063181,\n        \"time\": 0.41752422,\n        \"userId\": \"656de556aaacedf8f98f88c5\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "musics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiURL}}/predicts/:userId",
+							"host": [
+								"{{apiURL}}"
+							],
+							"path": [
+								"predicts",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "656de556aaacedf8f98f88c5"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiURL}}/predicts/:userId",
+									"host": [
+										"{{apiURL}}"
+									],
+									"path": [
+										"predicts",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "656de556aaacedf8f98f88c5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.11.6"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 Dec 2023 20:01:53 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2473"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"musics\": [\n        {\n            \"acoustic\": 0.07283702,\n            \"createdAt\": \"Mon, 04 Dec 2023 19:45:23 GMT\",\n            \"dance\": 0.73855544,\n            \"energy\": 0.81496762,\n            \"id\": \"656e2c53f9968bda0786f009\",\n            \"instrumental\": 0.00423541,\n            \"key\": 1,\n            \"name\": \"Thunderstruck\",\n            \"popularity\": 42.55748748779297,\n            \"speech\": 0.04063181,\n            \"time\": 0.41752422,\n            \"userId\": \"656de556aaacedf8f98f88c5\"\n        },\n        {\n            \"acoustic\": 0.07283702,\n            \"createdAt\": \"Mon, 04 Dec 2023 19:45:42 GMT\",\n            \"dance\": 0.73855544,\n            \"energy\": 0.81496762,\n            \"id\": \"656e2c6696410563e1e517d2\",\n            \"instrumental\": 0.00423541,\n            \"key\": 1,\n            \"name\": \"Highway to Hell\",\n            \"popularity\": 42.55748748779297,\n            \"speech\": 0.04063181,\n            \"time\": 0.41752422,\n            \"userId\": \"656de556aaacedf8f98f88c5\"\n        },\n        {\n            \"acoustic\": 0.07283702,\n            \"createdAt\": \"Mon, 04 Dec 2023 19:52:55 GMT\",\n            \"dance\": 0.73855544,\n            \"energy\": 0.81496762,\n            \"id\": \"656e2e17c9981e86ec570be4\",\n            \"instrumental\": 0.00423541,\n            \"key\": 1,\n            \"name\": \"Highway to Hell\",\n            \"popularity\": 42.55748748779297,\n            \"speech\": 0.04063181,\n            \"time\": 0.41752422,\n            \"userId\": \"656de556aaacedf8f98f88c5\"\n        },\n        {\n            \"acoustic\": 0.07283702,\n            \"createdAt\": \"Mon, 04 Dec 2023 19:55:09 GMT\",\n            \"dance\": 0.73855544,\n            \"energy\": 0.81496762,\n            \"id\": \"656e2e9daeb5e7309af1d510\",\n            \"instrumental\": 0.00423541,\n            \"key\": 1,\n            \"name\": \"Highway to Hell\",\n            \"popularity\": 42.55748748779297,\n            \"speech\": 0.04063181,\n            \"time\": 0.41752422,\n            \"userId\": \"656de556aaacedf8f98f88c5\"\n        },\n        {\n            \"acoustic\": 0.07283702,\n            \"createdAt\": \"Mon, 04 Dec 2023 20:01:09 GMT\",\n            \"dance\": 0.73855544,\n            \"energy\": 0.81496762,\n            \"id\": \"656e3005701c990a24e9c3f2\",\n            \"instrumental\": 0.00423541,\n            \"key\": 1,\n            \"name\": \"Highway to Hell\",\n            \"popularity\": 42.55748748779297,\n            \"speech\": 0.04063181,\n            \"time\": 0.41752422,\n            \"userId\": \"656de556aaacedf8f98f88c5\"\n        },\n        {\n            \"acoustic\": 0.07283702,\n            \"createdAt\": \"Mon, 04 Dec 2023 20:01:42 GMT\",\n            \"dance\": 0.73855544,\n            \"energy\": 0.81496762,\n            \"id\": \"656e302622386fad3fb84345\",\n            \"instrumental\": 0.00423541,\n            \"key\": 1,\n            \"name\": \"Highway to Hell\",\n            \"popularity\": 42.55748748779297,\n            \"speech\": 0.04063181,\n            \"time\": 0.41752422,\n            \"userId\": \"656de556aaacedf8f98f88c5\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "apiURL",
+			"value": "http://127.0.0.1:5000/api",
+			"type": "string"
+		}
+	]
+}
