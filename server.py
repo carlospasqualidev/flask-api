@@ -13,6 +13,5 @@ if __name__ == '__main__':
 #RUN THIS PROJECT
 
 # python3 -m venv .venv 
-# .venv\Scripts\activate   (WINDOWS)
-# source .venv/bin/activate (LINUX)
+# .venv\Scripts\activate (WINDOWS)  ||  source .venv/bin/activate (LINUX)
 # flask --app server --debug run 

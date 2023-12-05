@@ -1,6 +1,5 @@
 from prisma import Prisma
 
-
 async def deleteUserService(id):
     db = Prisma()
     await db.connect()

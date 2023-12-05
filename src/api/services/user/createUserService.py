@@ -4,7 +4,6 @@ async def createUserService(email, password):
     db = Prisma()
     await db.connect()
 
-
     user = await  db.users.create({
         "email": email,
         "password": password

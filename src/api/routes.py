@@ -59,7 +59,7 @@ async def predict():
                                            data["name"],
                                            data["userId"])
 
-    return jsonify({"message": ["Modelo de predição executado com sucesso."], "music": music} ),201
+    return jsonify({"message": ["Modelo de predição executado com sucesso."], "music": music}),201
 
 @routerBlueprint.route("/predicts/<userId>", methods=["GET"])
 async def musics(userId):

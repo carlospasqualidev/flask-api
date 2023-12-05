@@ -4,7 +4,6 @@ async def checkEmailAlredyUsedService(email, id = None):
     db = Prisma()
     await db.connect()
 
-
     where = {
         'email': email,
     }
